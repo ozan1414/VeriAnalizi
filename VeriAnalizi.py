@@ -23,8 +23,11 @@ sns.boxplot(data=data)
 plt.title("Kutu Grafiği")
 plt.show()
 
-# Korelasyon matrisi
-correlation_matrix = data.corr()
+# Korelasyon matrisi için sayısal sütunları seçme
+numeric_columns = data.select_dtypes(include=['float64', 'int64']).columns
+correlation_matrix = data[numeric_columns].corr()
+
+# Korelasyon matrisini görselleştirme
 sns.heatmap(correlation_matrix, annot=True)
 plt.title("Korelasyon Matrisi")
 plt.show()
