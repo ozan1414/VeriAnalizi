@@ -22,7 +22,7 @@ plt.show()
 
 # Gönderi türüne göre ortalama ağırlık görselleştirme
 plt.figure(figsize=(8, 6))
-sns.barplot(data=data, x='Gönderi Tipi', y='Ağırlık')
+sns.barplot(data=data, x='Gönderi Tipi', y='Ağırlık', ci=None)  # ci=None parametresi hata çubuklarını kaldırır
 plt.title('Gönderi Türüne Göre Ortalama Ağırlık')
 plt.xlabel('Gönderi Türü')
 plt.ylabel('Ortalama Ağırlık')
